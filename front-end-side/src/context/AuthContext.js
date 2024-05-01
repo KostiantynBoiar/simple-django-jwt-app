@@ -41,9 +41,18 @@ export const AuthProvider = ({children}) => {
         console.log('data: ', data)
     }
 
+    let logoutUser = () => {
+        setAuthtokens(null)
+        setUser(null)
+        localStorage.removeItem('authTokens')
+        history.push('/login')
+
+    }
+
     let contextData = {
         user:user,
-        loginUser:loginUser
+        loginUser:loginUser,
+        logoutUser:logoutUser
     }
 
     return(
