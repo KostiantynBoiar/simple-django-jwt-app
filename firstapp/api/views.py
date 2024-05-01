@@ -8,3 +8,4 @@ def getRoutes(request):
         '/api/v1/routes/<int:route_id>',
     ]
     return Response(routes)
+
